@@ -6,17 +6,6 @@ pipeline {
         }
     }
     stages {
-        stage('nginx') {
-            agent {
-                docker {
-                    image 'nginx'
-                    args '-p 8000:8000 -p 9000:9000'
-                }
-            }
-            steps {
-                sh 'nginx'
-            }
-        }
         stage('Build') {
           steps {
               sh 'node -v'
